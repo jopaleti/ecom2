@@ -29,6 +29,7 @@ import {
 import SearchBox from "./components/SearchBox";
 import LoadingBox from "./components/LoadingBox";
 import MessageBox from "./components/MessageBox";
+import HandleNavbar from "./components/handle-navbar/HandleNavbar";
 
 import { listProductCategories } from "./actions/productActions";
 import ChatBox from "./components/ChatBox";
@@ -55,8 +56,9 @@ function App() {
 	}, [dispatch]);
 	return (
 		<BrowserRouter>
+			<HandleNavbar />
 			<div className="grid-container">
-				<header className="row">
+				{/* <header className="row">
 					<div>
 						<button
 							type="button"
@@ -171,7 +173,7 @@ function App() {
 							))
 						)}
 					</ul>
-				</aside>
+				</aside> */}
 				<main>
 					<Routes>
 						<Route path="/seller/:id" element={<SellerScreen />}></Route>

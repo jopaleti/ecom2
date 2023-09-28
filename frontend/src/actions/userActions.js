@@ -90,6 +90,7 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
     dispatch({ type: USER_DETAILS_FAIL, payload: message });
   }
 };
+
 export const updateUserProfile = (user) => async (dispatch, getState) => {
   dispatch({ type: USER_UPDATE_PROFILE_REQUEST, payload: user });
   const {

@@ -1,0 +1,70 @@
+@mixin flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+@mixin rectBorder {
+	padding: 15px 45px;
+	border: 1px solid grey;
+}
+// Navbar Link font-size
+@mixin navFontSize {
+	font-size: 15px;
+}
+
+.mainNavbar {
+	.child {
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	.mobile-nav {
+		display: flex;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		align-items: center;
+		justify-content: space-between;
+		.logo {
+			h6 {
+				@include rectBorder;
+				@include navFontSize;
+			}
+		}
+		.menu {
+			cursor: pointer;
+			font-size: 25px;
+		}
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	.main {
+		@media (max-width: 768px) {
+			display: none !important;
+		}
+	}
+
+	border-bottom: 1px solid grey;
+	.container {
+		// display: none;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		nav {
+			@include flex;
+			.nav_item_container {
+				.logo {
+					h6 {
+						@include rectBorder;
+						@include navFontSize;
+					}
+				}
+				a {
+					text-decoration: none;
+					color: grey;
+				}
+			}
+		}
+	}
+}

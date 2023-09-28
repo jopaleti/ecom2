@@ -1,0 +1,71 @@
+@mixin flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+@mixin rectBorder {
+	padding: 15px 45px;
+	border: 1px solid grey;
+}
+// Navbar Link font-size
+@mixin navFontSize {
+	font-size: 15px;
+}
+
+.sellerNav {
+	@include flex();
+	width: 85%;
+	.flex_item2 {
+		@include flex;
+		gap: 20px;
+		h6 {
+			background-color: blue;
+			@include rectBorder;
+			@include navFontSize;
+			white-space: nowrap;
+		}
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+	.avatar {
+		background-color: blue;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: 1px solid grey;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		white-space: wrap;
+		position: relative;
+		h1 {
+			text-align: center;
+			@include navFontSize;
+			color: #fff;
+		}
+		.dropdown_container {
+			background-color: blue;
+			margin: 0;
+			position: absolute;
+			padding: 15px 10px;
+			border: 1px solid grey;
+			top: 110%;
+			z-index: 100;
+			a {
+				text-decoration: none;
+				color: #fff;
+				h6 {
+					margin: 0;
+					@include navFontSize;
+					font-weight: 600;
+					line-height: 20px;
+					white-space: nowrap;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

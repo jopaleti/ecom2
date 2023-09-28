@@ -1,0 +1,113 @@
+@mixin flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+@mixin rectBorder {
+	padding: 15px 45px;
+	border: 1px solid grey;
+}
+// Navbar Link font-size
+@mixin navFontSize {
+	font-size: 15px;
+}
+
+.aside-admin-nav {
+	@media (min-width: 768px) {
+		display: none;
+	}
+	padding-left: 40px;
+	margin-top: 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	// align-items: center;
+	margin-left: auto;
+	gap: 10px;
+	a {
+		text-decoration: none;
+		color: black;
+		h1 {
+			padding: 0;
+			margin: 0;
+			line-height: 50px;
+		}
+	}
+	.avatar {
+		cursor: pointer;
+		a {
+			text-decoration: none;
+			color: #fff;
+			h6 {
+				margin: 0;
+				@include navFontSize;
+				color: black;
+				font-weight: 600;
+				line-height: 20px;
+				white-space: nowrap;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+.adminNav {
+	@include flex;
+	width: 80%;
+	.flex_item2 {
+		@include flex;
+		gap: 30px;
+		h6 {
+			background-color: black;
+			@include rectBorder;
+			@include navFontSize;
+			white-space: nowrap;
+		}
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+	@media (max-width: 768px) {
+		display: none;
+	}
+	.avatar {
+		background-color: black;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: 1px solid grey;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		white-space: wrap;
+		position: relative;
+		h1 {
+			text-align: center;
+			@include navFontSize;
+			color: #fff;
+		}
+		.dropdown_container {
+			background-color: black;
+			margin: 0;
+			position: absolute;
+			padding: 15px 10px;
+			border: 1px solid grey;
+			top: 110%;
+			z-index: 100;
+			a {
+				text-decoration: none;
+				color: #fff;
+				h6 {
+					margin: 0;
+					@include navFontSize;
+					font-weight: 600;
+					line-height: 20px;
+					white-space: nowrap;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
